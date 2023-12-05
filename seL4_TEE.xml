@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright 2021 seL4 Project a Series of LF Projects, LLC
+   SPDX-License-Identifier: BSD-2-Clause
+-->
+<manifest>
+  <remote name="seL4" fetch="https://github.com/seL4"/>
+  <remote name="ssrc-tre" fetch="ssh://git@github.com/tiiuae/"/>
+  <remote name="github" fetch="https://github.com/"/> 
+
+  <default remote="seL4" revision="master"/>
+  
+  <project name="musllibc.git" path="projects/musllibc" revision="c7aa943a2ad4fccaccf52a1f957bf8860f57f5b0" upstream="sel4" dest-branch="sel4"/>
+  <project name="nanopb/nanopb" path="tools/nanopb" remote="github" revision="1466e6f953835b191a7f5acf0c06c941d4cd33d9" upstream="master" dest-branch="refs/tags/0.4.3"/>
+  <project name="riscv/opensbi" path="tools/opensbi" remote="github" revision="a98258d0b537a295f517bbc8d813007336731fa9" upstream="refs/tags/v0.8" dest-branch="refs/tags/v0.8"/>
+  <!-- <project name="seL4.git" path="kernel" revision="fc167441f02ac35e0654047a323936e563bcff79" upstream="master" dest-branch="master"/> -->
+  <project name="seL4_libs.git" path="projects/seL4_libs" revision="14d3c94f5164c993033a35a5d9e23ba6dcf12f5f" upstream="master" dest-branch="master"/>
+  <!-- <project name="seL4_tools.git" path="tools/seL4" revision="74f4b0e0ccab286ef7aefb675bc53db408bb939e" upstream="master" dest-branch="master">
+    <linkfile src="cmake-tool/init-build.sh" dest="init-build.sh"/>
+    <linkfile src="cmake-tool/griddle" dest="griddle"/>
+  </project> -->
+  <project name="sel4_projects_libs" path="projects/sel4_projects_libs" revision="a6fbc13c792ef518e5bcf1da69c8d27b6cd19814" upstream="master" dest-branch="master"/>
+  <project name="sel4runtime.git" path="projects/sel4runtime" revision="c27050513503f615137950cb3918f6f040f34407" upstream="master" dest-branch="master"/>
+  <!-- <project name="sel4test.git" path="projects/sel4test" revision="950f9acb3ea761cee05c25875fb6aaa1b88e3b92" upstream="master" dest-branch="master">
+    <linkfile src="easy-settings.cmake" dest="easy-settings.cmake"/>
+  </project> -->
+  <project name="util_libs.git" path="projects/util_libs" revision="a9f08c9061d776f6aa7d519041ed8d1525dd01b4" upstream="master" dest-branch="master"/>
+
+  <!-- CAmkES--> 
+  <project name="camkes-tool.git" path="projects/camkes-tool" revision="bceec3634b2c107c3b8136d2128b0ad94f1accac"/>
+  <project name="capdl.git" path="projects/capdl" revision="234063c8e46b78ce70d1057fc9a3a2165850f791"/>
+  <project name="global-components.git" path="projects/global-components" revision="df8b9e42ef4a7b288f2d47859dbae66db1ff1cb3"/>
+  <project name="projects_libs.git" path="projects/projects_libs" revision="ff11dd472c79c2a2c9e09910b85d0fc2f965670d"/>
+
+  <!-- AMP modifications -->
+  <project name="tee_seL4.git" path="kernel" remote="ssrc-tre" revision="platsec_dev"/>
+  <project name="tee_seL4_tools" path="tools/seL4" remote="ssrc-tre" revision="platsec_dev">
+    <linkfile src="cmake-tool/init-build.sh" dest="init-build.sh"/>
+    <linkfile src="cmake-tool/griddle" dest="griddle"/>
+  </project>
+  <project name="tee_sel4test" path="projects/sel4test" remote="ssrc-tre" revision="platsec_001">
+    <linkfile src="easy-settings.cmake" dest="easy-settings.cmake"/>
+  </project>
+  <project name="tee_seL4_teeos.git" path="projects/sel4_teeos" remote="ssrc-tre" revision="platsec_dev"/>
+  <project name="tee_optee_os.git" path="projects/crypto/optee_os" remote="ssrc-tre" revision="platsec_dev"/>
+  <project name="libtom/libtommath.git" path="projects/crypto/libtommath" remote="github" revision="bea9270646303baf683f4ba2ddf0d70721f0e55d" upstream="develop" dest-branch="sel4"/>
+  <project name="tee_seL4_teeos_camkes.git" path="projects/sel4_teeos_camkes" remote="ssrc-tre" revision="platsec_dev"/>
+  <project name="littlefs-project/littlefs.git" path="projects/littlefs" remote="github" revision="ead50807f1ca3fdf2da00b77a0ce02651ded2d13"/>
+
+</manifest>
